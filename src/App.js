@@ -45,19 +45,15 @@ function App() {
   };
 
   useEffect(() => {
-    Axios.get("https://eugenefriends.herokuapp.com/read", {
-      name: name,
-      age: age,
-      mail: mail,
-    })
+    Axios.get("https://eugenefriends.herokuapp.com/read")
     .then((response) =>{
       setListOfFriends(response.data);
     })
-    .catch((error) => {
-      console.log(error);
+    .catch(() => {
+      console.log("ERR");
     });
   
-  }, [])
+  }, []);
 
 
   return  (
