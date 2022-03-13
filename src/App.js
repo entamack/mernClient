@@ -25,7 +25,7 @@ function App() {
     
     Axios.put("https://eugenefriends.herokuapp.com/update", {newAge: newAge, id: id}).then(() => {
       setListOfFriends(listOfFriends.map((val) => {
-        return val._id == id 
+        return val._id === id 
         ? {_id: id, name: val.name, age: newAge, mail: val.mail} 
         : val;
 
@@ -38,7 +38,7 @@ function App() {
     Axios.delete(`https://eugenefriends.herokuapp.com/delete/${id}`).then(() => {
       setListOfFriends(
         listOfFriends.filter((val) => {
-          return val._id != id;
+          return val._id !== id;
         })
       );
     });
